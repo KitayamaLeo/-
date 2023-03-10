@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>レッスンレポート入力アプリ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h1>レッスンレポート入力アプリ</h1>
+    <form>
+      <div>
+        <label for="student_name">生徒の名前:</label>
+        <input type="text" id="student_name" name="student_name" required>
+      </div>
+      <div>
+        <label for="lesson_date">レッスン日:</label>
+        <input type="date" id="lesson_date" name="lesson_date" required>
+      </div>
+      <div>
+        <label for="lesson_duration">レッスン時間:</label>
+        <input type="number" id="lesson_duration" name="lesson_duration" min="0" max="240" required> 分
+      </div>
+      <div>
+        <label for="lesson_content">レッスン内容:</label>
+        <textarea id="lesson_content" name="lesson_content" rows="5" cols="30" required></textarea>
+      </div>
+      <div>
+        <label for="lesson_evaluation">レッスン評価:</label>
+        <select id="lesson_evaluation" name="lesson_evaluation" required>
+          <option value="">選択してください</option>
+          <option value="とても良かった">とても良かった</option>
+          <option value="良かった">良かった</option>
+          <option value="普通">普通</option>
+          <option value="あまり良くなかった">あまり良くなかった</option>
+          <option value="良くなかった">良くなかった</option>
+        </select>
+      </div>
+      <div>
+        <label for="generated_text">文章生成ツール:</label>
+        <select id="generated_text" name="generated_text" onchange="insertGeneratedText()" required>
+          <option value="">選択してください</option>
+         
+        </select>
+      </div>
+      <button type="submit">送信</button>
+    </form>
+
+    <h1>文章生成ツール</h1>
+    <form>
+      <label>1つ目の設問</label>
+      <select id="select_0" onchange="selectOption(0, this.selectedIndex)">
+        <option value="">--選択してください--</option>
+        <option value="とても良かった">とても良かった</option>
+        
+        <script>document.write(makeOptions(0))</script>
+      </select>
+      <br>
+    
+      <label>2つ目の設問</label>
+      <select id="select_1" onchange="selectOption(1, this.selectedIndex)">
+        <option value="">--選択してください--</option>
+        <option value="とても良かった">とても良かった</option>
+        
+        <script>document.write(makeOptions(1))</script>
+      </select>
+      <br>
+    
+      <label>3つ目の設問</label>
+      <select id="select_2" onchange="selectOption(2, this.selectedIndex)">
+        <option value="">--選択してください--</option>
+        <option value="とても良かった">とても良かった</option>
+       
+        
+        <script>document.write(makeOptions(2))</script>
+      </select>
+      <br>
+    
+      <label>4つ目の設問</label>
+      <select id="select_3" onchange="selectOption(3, this.selectedIndex)">
+        <option value="">--選択してください--</option>
+        <option value="とても良かった">とても良かった</option>
+        
+        <script>document.write(makeOptions(3))</script>
+      </select>
+      <br>
+    
+      <label>5つ目の設問</label>
+      <select id="select_4" onchange="selectOption(4, this.selectedIndex)">
+        <option value="">--選択してください--</option>
+        <option value="とても良かった">とても良かった</option>
+        
+        <script>document.write(makeOptions(4))</script>
+      </select>
+      <br>
+      
+      <label>生成された文章</label>
+      <textarea id="generatedText" rows="5" cols="50"></textarea>
+      <br>
+    
+      <button type="button" onclick="generateText()">文章を生成する</button>
+    </form>
+
+    <script>
+      function generateText() {
+        var selectValues = [];
+        for (var i = 0; i < 5; i++) {
+          var select = document.getElementById("select_" + i);
+          var selectedValue = select.options[select.selectedIndex].value;
+          selectValues.push(selectedValue);
+        }
+        var generatedText = "私は" + selectValues[0] + "人で、" + selectValues[1] + "ものものを" + selectValues[2] + "方法で解決し、" + selectValues[3] + "ものを作成しました。また、" + selectValues[4] + "ことをしました。";
+        document.getElementById("generatedText").value = generatedText;
+}
+</script>
+
+<html>
+  <body>
+    <select id="select_0">
+      <option value="一人">一人</option>
+      <option value="二人">二人</option>
+      <option value="三人">三人</option>
+    </select>
+    <select id="select_1">
+      <option value="多くの">多くの</option>
+      <option value="いくつかの">いくつかの</option>
+      <option value="少数の">少数の</option>
+    </select>
+    <select id="select_2">
+      <option value="革新的な">革新的な</option>
+      <option value="古典的な">古典的な</option>
+      <option value="効率的な">効率的な</option>
+    </select>
+    <select id="select_3">
+      <option value="新しい">新しい</option>
+      <option value="独創的な">独創的な</option>
+      <option value="役に立つ">役に立つ</option>
+    </select>
+    <select id="select_4">
+      <option value="旅行">旅行</option>
+      <option value="ボランティア活動">ボランティア活動</option>
+      <option value="趣味">趣味</option>
+    </select>
+    <button onclick="generateText()">生成</button>
+    <br><br>
+    <textarea id="generatedText" rows="4" cols="50"></textarea>
+  </body>
+</html> 
