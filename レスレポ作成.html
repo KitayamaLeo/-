@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<head>
-		<title>レッスンレポート作成ツール</title>
+ <head>
+	
+
+
+
+	<meta charset="utf-8">
+		<title>
+			レッスンレポート作成ツール
+		</title>
+		
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+		
 		<style>
+			
+
+
 		  /* 全体のスタイル */
 		  body {
-			font-family: 'Montserrat', sans-serif;
+			background-color: #292929;
+			font-family: Arial, sans-serif;
 			font-size: 16px;
-			line-height: 1.5;
 			color: #333;
-			background-color: #f6f6f6;
-			padding: 20px;
+			margin: 0;
+			padding: 0;
 		  }
 	
 		  /* フォームのスタイル */
 		  form {
-			max-width: 600px;
-			margin: 0 auto;
-			background-color: #fff;
+			background-color: #BDBDBD;
 			border-radius: 10px;
-			padding: 40px;
-			box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-		  }
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			margin: 50px auto;
+			max-width: 800px;
+			padding: 30px;
+		}
 	
-		  form h1 {
-			font-size: 32px;
+		  h1 {
+			font-size: 48px;
 			font-weight: 700;
 			margin-bottom: 20px;
-			color: #333;
-		  }
+			color: #BDBDBD;
+			text-align: center;
+			text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+		}
+
 	
 		  label {
 			display: block;
@@ -54,12 +68,18 @@
 			transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 		  }
 	
-		  input[type="text"]:focus,
-		  select:focus {
-			border-color: #4CAF50;
-			box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 0px 4px rgba(76, 175, 80, 0.4);
-			outline: none;
-		  }
+		  input[type="text"],
+		select,
+		textarea {
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			display: block;
+			font-size: 18px;
+			margin-bottom: 20px;
+			padding: 10px;
+			width: 100%;
+		}
 	
 		  button[type="submit"] {
 			display: inline-block;
@@ -81,28 +101,34 @@
 			background-color: #388E3C;
 		  }
 		</style>
-	  </head>
+	</head>
 	
 
-<body>
-	<h1>レッスンレポート文章生成ツール</h1>
+ <body>
+	<h1>
+		レッスンレポート文章生成ツール
+	</h1>
+	
 	<form>
-		<label for="sentence1">名前</label>
-<select id="sentence1">
+		
+	 <label for="sentence1">名前</label> 
 
-  <option value="">選択してください</option>
-  <optgroup label="木曜日">
-	<option value="石川侑空ちゃん">石川侑空ちゃん</option>
-    <option value="野﨑琉聖くん">野﨑琉聖くん</option>
-    <option value="中村豊生くん">中村豊生くん</option>
-  </optgroup>
-  <optgroup label="土曜日">
-	<option value="土佐魁士くん">土佐魁士くん</option>
-	<option value="川見優晴くん">川見優晴くん</option>
-	<option value="谷本悠悟くん">谷本悠悟くん</option>
-    
-  </optgroup>
+	 <select id="sentence1">  
+		<option value="">選択してください</option>
+<optgroup label="木曜日">
+<option value="石川侑空ちゃん">石川侑空ちゃん</option>
+<option value="野﨑琉聖くん">野﨑琉聖くん</option>
+<option value="中村豊生くん">中村豊生くん</option>
+</optgroup>
+<optgroup label="土曜日">
+<option value="土佐魁士くん">土佐魁士くん</option>
+<option value="川見優晴くん">川見優晴くん</option>
+<option value="谷本悠悟くん">谷本悠悟くん</option>
+
+</optgroup>
 </select><br>
+
+	 
 
 	<label for="sentence2">授業回数</label>
 	<select id="sentence2">
@@ -120,19 +146,33 @@
 
 	</select><br>
     
+
 	<div class="form-group">
 		<label for="lesson_date">授業日</label>
 		<div class="input-group">
 		  <div class="input-group-prepend">
 			<span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
 		  </div>
-		  <input type="date" id="lesson_date" name="lesson_date" class="form-control" required>
+		  <input type="date" id="lesson_date" name="lesson_date" class="form-control" required style="font-size: 20px; height: 40px;">
 		</div>
 	  </div>
 	  
+	  
 
-	<label for="sentence3">取り組んだこと1</label>
-<select id="sentence3">
+
+
+
+
+
+
+
+
+
+
+	  
+
+	<label for="sentence3">取り組んだこと1</label> 
+ <select id="sentence3">
   <option value="">選択してください</option>
   <option value="タイピング練習">タイピング練習</option>
   <option value="タイピングの腕試し">タイピングの腕試し</option>
@@ -140,24 +180,25 @@
   <option value="前回のレッスンで理解できなかった部分">前回のレッスンで理解できなかった部分</option>
   <option value="チャプター「花を植えよう」">チャプター「花を植えよう」</option>
   <option value="その他">その他</option>
-</select><br>
+ </select><br>
 
 		
 
-    <label for="sentence4">取り組んだこと2</label>
-		<select id="sentence4">
+    <label for="sentence4">
+		取り組んだこと2
+	</label>
+	  <select id="sentence4">
 		<option value="">選択してください</option>
 		<option value="タイピング練習">タイピング練習</option>
 		<option value="タイピングの腕試し">タイピングの腕試し</option>
 		<option value="家庭学習で分からなかった部分">家庭学習で分からなかった部分</option>
-		<option value="前回のレッスンで惜しくも理解できなかった部分">前回のレッスンで惜しくも理解できなかった部分</option>
+		<option value="前回のレッスンで理解できなかった部分">前回のレッスンで理解できなかった部分</option>
 		<option value="チャプター「花を植えよう」">チャプター「花を植えよう」</option>
 		<option value="チャプター「おつかいロボット」">チャプター「おつかいロボット」</option>
 		<option value="チャプター「」">チャプター「」</option>
 		<option value=""></option>
 		<option value=""></option>
-			
-		</select><br>
+	  </select><br>
 
 
 
@@ -167,7 +208,7 @@
 		<option value="タイピング練習">タイピング練習</option>
 		<option value="タイピングの腕試し">タイピングの腕試し</option>
 		<option value="家庭学習で分からなかった部分">家庭学習で分からなかった部分</option>
-		<option value="前回のレッスンで惜しくも理解できなかった部分">前回のレッスンで惜しくも理解できなかった部分</option>
+		<option value="前回のレッスンで理解できなかった部分">前回のレッスンで理解できなかった部分</option>
 		<option value="チャプター「花を植えよう」">チャプター「花を植えよう」</option>
 		<option value="チャプター「おつかいロボット」">チャプター「おつかいロボット」</option>
 		<option value=""></option>
@@ -180,7 +221,7 @@
 		<textarea id="goal" rows="1" cols="50"></textarea><br>
 
 		<label for="sentence6">タイピングの達成度1</label>
-	<select id="sentence6">
+	 <select id="sentence6">
 		<option value="">選択してください</option>
 		<option value="早くタイピングできるようになってきています。">早くタイピングできるようになってきています。</option>
 		<option value="お手本通りの指で早く正確なタイピングできています。">お手本通りの指で早くタイピングできています。</option>
@@ -191,7 +232,7 @@
 		<option value=""></option>
 		<option value=""></option>
 		<option value=""></option>
-	</select><br>
+	 </select><br>
 
 
 	<label for="sentence7">タイピングのコメント3</label>
@@ -256,12 +297,24 @@
 	
 
 	<button type="button" onclick="combineSentences()">生成する</button>
-</form>
+ </form>
 
-<label for="result">レッスンレポート：</label><br>
-<textarea id="result" rows="10" cols="100"></textarea>
+ <label for="result" style="font-size: 20px; font-weight: bold; color: #BDBDBD;">レッスンレポート：</label><br>
+ <div style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; box-shadow: 2px 2px 2px #ccc;">
+  <textarea id="result" rows="10" cols="100" style="font-size: 16px; border: none;"></textarea>
+  <button onclick="copyText()">コピーする</button>
+ </div>
 
-<script>
+ <script>
+  function copyText() {
+    var copyTextarea = document.querySelector("#result");
+    copyTextarea.select();
+    document.execCommand("copy");
+  }
+ </script>
+
+
+ <script>
 	function combineSentences() {
 		// フォームから各選択されたフィールドの値を取得
 		var sentence1 = document.getElementById("sentence1").value;
@@ -282,7 +335,7 @@
 		var combinedSentence = "【" +sentence1 + "レッスンレポート第" + sentence2 + "回】" + lesson_date + "\n\n" ;
         var combinedSentence2 ="本日は" +sentence3 +"、" +sentence4 + sentence5 + "に取り組みました。\n\n" ;
 		var combinedSentence3 = "本日のレッスン目標は「" + goal + "」でした。\n\n\n"   ;
-		var combinedSentence4 = "---タイピング--- \n" + sentence6 + sentence7 + sentence8 +"\n";
+		var combinedSentence4 = "---タイピング--- \n" + sentence6 + sentence7 + sentence8 +"\n\n";
 		var combinedSentence5 = "---ミッションモード--- \n" + whatdidhedo + sentence9 +"\n\n" ;
 		var combinedSentence6 = "◇◇自宅学習目標◇◇ \n" + jitakugakusyu ;
 
@@ -290,6 +343,6 @@
 		= combinedSentence + combinedSentence2 + combinedSentence3 + combinedSentence4
 		+ combinedSentence5 + combinedSentence6 ;
 	}
-</script>
-</body>
+ </script>
+ </body>
 </html>
